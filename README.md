@@ -4,17 +4,20 @@ The state and control variables are defined as:
 $$
 X = [x_1, x_2] = [R, \alpha, v, q]
 $$
+
 $$
 U = [a, \omega]
 $$
 
 The state equation is given by the following:
+
 $$
 \begin{cases}
 \dot{x}_1 = [ \cos q \cdot v, \sin q \cdot v] / R \\
 \dot{x}_2 = [a, \omega]
 \end{cases}
 $$
+
 ## indirect time-optimal control
 In the optimization problem setting, the state variables are set to be the following, with the state variables \( X_1 = [x_{11}, x_{12}] \), and the control variables \( X_2 = [x_{21}, x_{22}] \), which are considered for optimization.
 
@@ -29,12 +32,16 @@ $$
 The optimal control strategy is determined by the following equations:
 
 $$
-\dot{\lambda}_1 = - \frac{\partial H}{\partial X_1} = -\left[ \frac{\partial f}{\partial x_{11}}, \frac{\partial f}{\partial x_{12}} \right]^\top
+\dot{\lambda}_1 = - \frac{\partial H}{\partial X_1} 
 $$
 
+and
+
 $$
-\dot{\lambda}_2 = - \frac{\partial H}{\partial X_2} = -\left[ \frac{\partial f}{\partial x_{21}}, \frac{\partial f}{\partial x_{22}} \right]^\top
-$$
+\dot{\lambda}_2 = - \frac{\partial H}{\partial X_2}  
+$$ 
+
+
 
 The control law is designed to switch based on the value of \( \lambda_2 \) and a predefined threshold \( \varepsilon \), as follows:
 
